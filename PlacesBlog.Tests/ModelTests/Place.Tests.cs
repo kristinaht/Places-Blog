@@ -55,7 +55,18 @@ namespace PlacesBlog.Tests
       List<Place> result = Place.GetAll();
 
       CollectionAssert.AreEqual(result, places);
+    }
 
+    [TestMethod]
+    public void Find_ReturnsPlaceWithCorrectId_Place()
+    {
+      Place newPlace1 = new Place("Montevideo");
+      Place newPlace2 = new Place("Buenos Aires"); 
+      List<Place> testPlaces = new List<Place>{newPlace1, newPlace2};
+
+      Place result = Place.Find(1);
+
+      Assert.AreEqual(result, newPlace1);
     }
   }
 }
