@@ -1,6 +1,7 @@
 using PlacesBlog.Models;
 using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 
 namespace PlacesBlog.Tests
 {
@@ -24,6 +25,17 @@ namespace PlacesBlog.Tests
       int result = newPlace.Id;
 
       Assert.AreEqual(1, result);
+    }
+
+    [TestMethod]
+    public void GetAll_ReturnsAllInstancesOfPlace_Place()
+    {
+      Place newPlace1 = new Place("Montevideo");
+      Place newPlace2 = new Place("Buenos Aires");
+
+      List<Place> testList = Place.GetAll();
+
+      Assert.AreEqual(2, testList.Count);
     }
   }
 }

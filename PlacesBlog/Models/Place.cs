@@ -7,13 +7,18 @@ namespace PlacesBlog.Models
   {
     public string CityName { get; set; }
     public int Id { get; }
-    private List<Place> _allPlaces = new List<Place>{};
+    private static List<Place> _allPlaces = new List<Place>{};
 
     public Place(string cityName)
     {
       CityName = cityName;
       _allPlaces.Add(this);
       Id = _allPlaces.Count;
+    }
+
+    public static List<Place> GetAll()
+    {
+      return _allPlaces;
     }
   }
 }
