@@ -23,7 +23,7 @@ namespace PlacesBlog.Tests
 
       int result = newPlace.Id;
 
-      Assert.AreEqual(2, result);
+      Assert.AreEqual(1, result);
     }
   }
 }
