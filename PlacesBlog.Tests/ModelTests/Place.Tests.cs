@@ -34,14 +34,13 @@ namespace PlacesBlog.Tests
     }
 
     [TestMethod]
-    public void GetAll_ReturnsAllInstancesOfPlace_Place()
+    public void GetAll_ReturnsEmptyList_List()
     {
-      Place newPlace1 = new Place("Montevideo");
-      Place newPlace2 = new Place("Buenos Aires");
+      List<Place> newList = new List<Place>{};
+      
+      List<Place> result = Place.GetAll();
 
-      List<Place> testList = Place.GetAll();
-
-      Assert.AreEqual(2, testList.Count);
+      CollectionAssert.AreEqual(result, newList);
     }
   }
 }
