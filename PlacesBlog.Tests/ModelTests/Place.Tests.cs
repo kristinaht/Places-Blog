@@ -42,5 +42,20 @@ namespace PlacesBlog.Tests
 
       CollectionAssert.AreEqual(result, newList);
     }
+
+    [TestMethod]
+    public void GetAll_ReturnsListItems_PlaceList()
+    {
+      //arrange
+      Place newPlace1 = new Place("Montevideo");
+      Place newPlace2 = new Place("Buenos Aires");
+      List<Place> places = new List<Place>{newPlace1, newPlace2};
+
+      //act
+      List<Place> result = Place.GetAll();
+
+      CollectionAssert.AreEqual(result, places);
+
+    }
   }
 }
