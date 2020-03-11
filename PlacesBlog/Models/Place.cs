@@ -20,5 +20,10 @@ namespace PlacesBlog.Models
     {
       return _allPlaces;
     }
+
+    public static void ClearAll()
+    {
+      _allPlaces.Clear();
+    }
   }
 }
