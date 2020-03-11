@@ -14,5 +14,16 @@ namespace PlacesBlog.Tests
       
       Assert.AreEqual(typeof(Place), newPlace.GetType());
     }
+
+    [TestMethod]
+    public void GetId_PlacesInstantiatedWithCorrectId_Id()
+    {
+      string testCity = "Punta Del Este";
+      Place newPlace = new Place(testCity);
+
+      int result = newPlace.Id;
+
+      Assert.AreEqual(2, result);
+    }
   }
 }
